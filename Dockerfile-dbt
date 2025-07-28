@@ -1,0 +1,14 @@
+FROM python:3.11-slim
+
+# Cài các package hệ thống
+RUN apt-get update && \
+    apt-get install -y git gcc g++ libpq-dev && \
+    pip install --no-cache-dir \
+        dbt-core==1.7.3 \
+        dbt-clickhouse==1.7.3 \
+        clickhouse-driver==0.2.6 \
+        clickhouse-connect==0.6.22 \
+        protobuf==4.21.12
+
+WORKDIR /usr/app
+ENTRYPOINT ["/bin/bash"]

@@ -1,0 +1,32 @@
+source venv/bin/activate
+
+url mysql: jdbc:mysql://localhost:3306/order_streaming?allowPublicKeyRetrieval=true&useSSL=false
+
+curl -i -X POST http://localhost:8083/connectors \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -d @register-mysql-cdc.json
+
+
+curl http://localhost:8083/connectors/mysql-connector-order/status
+
+
+
+PYTHONPATH=/opt:/opt/sparks:/opt/bitnami/spark/python \
+spark-submit \
+  --master spark://spark-master:7077 \
+  --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.3,com.clickhouse:clickhouse-jdbc:0.6.4,org.apache.httpcomponents.client5:httpclient5:5.3.1 \
+  /opt/sparks/write_data_to_clickhouse.py
+
+
+
+=========================ERROR=========================
+
+Access denied for user 'root'@'172.19.0.x' (using password: YES)
+    CREATE USER 'root'@'172.19.0.1' IDENTIFIED BY '123';
+    GRANT ALL PRIVILEGES ON *.* TO 'root'@'172.19.0.1';
+
+SQL Error [1045] [28000]: Access denied for user 'root'@'172.19.0.1' (using password: YES)
+    CREATE USER 'root'@'%' IDENTIFIED BY '123';
+    GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+    FLUSH PRIVILEGES;

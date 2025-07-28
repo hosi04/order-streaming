@@ -1,0 +1,30 @@
+[0m10:12:34.074956 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e47e1667d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e47e0720160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e47e0720100>]}
+
+
+============================== 10:12:34.080031 | bd240b69-21aa-4eb7-b9d7-dd4356a895a0 ==============================
+[0m10:12:34.080031 [info ] [MainThread]: Running with dbt=1.10.2
+[0m10:12:34.080632 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/ngocthanh/.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt init order_streaming', 'send_anonymous_usage_stats': 'True'}
+[0m10:12:34.090319 [debug] [MainThread]: Starter project path: /home/ngocthanh/anaconda3/lib/python3.9/site-packages/dbt/include/starter_project
+[0m10:12:34.092318 [info ] [MainThread]: 
+Your new dbt project "order_streaming" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m10:12:34.092625 [info ] [MainThread]: Setting up your profile.
+[0m10:12:43.395105 [info ] [MainThread]: No sample profile found for clickhouse.
+[0m10:12:43.395962 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 9.372349, "process_in_blocks": "944", "process_kernel_time": 0.044995, "process_mem_max_rss": "91284", "process_out_blocks": "72", "process_user_time": 0.76792}
+[0m10:12:43.396438 [debug] [MainThread]: Command `dbt init` succeeded at 10:12:43.396361 after 9.37 seconds
+[0m10:12:43.396823 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e47e1667d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e47e07200d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e47e070aa00>]}
+[0m10:12:43.397132 [debug] [MainThread]: Flushing usage events
+[0m10:12:44.659244 [debug] [MainThread]: An error was encountered while trying to flush usage events

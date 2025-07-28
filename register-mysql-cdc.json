@@ -1,0 +1,20 @@
+{
+  "name": "mysql-connector-order",
+  "config": {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "database.hostname": "mysql",
+    "database.port": "3306",
+    "database.user": "root",
+    "database.password": "123",
+    "database.server.id": "184054",
+    "database.server.name": "mysql-order-server",
+    "topic.prefix": "order_cdc",
+    "database.include.list": "order_streaming",
+    "table.include.list": "order_streaming.orders,order_streaming.order_items",
+    "include.schema.changes": "true",
+    
+    "schema.history.internal.kafka.bootstrap.servers": "kafka:9092",
+    "schema.history.internal.kafka.topic": "schema-changes.order",
+    "schema.history.internal.store.only.captured.tables.ddl": "true"
+  }
+}

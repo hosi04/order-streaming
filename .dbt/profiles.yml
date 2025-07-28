@@ -1,0 +1,14 @@
+# ~/.dbt/profiles.yml
+order_streaming:
+  target: dev
+  outputs:
+    dev:
+      type: clickhouse
+      schema: order_streaming
+      host: clickhouse
+      port: 8123
+      user: admin
+      password: admin
+      secure: False
+      verify: False
+      database: order_streaming

@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: order_streaming #Bi danh cho Source
+    database: order_streaming
+    schema: order_streaming
+    tables:
+      - name: orders_cdc
